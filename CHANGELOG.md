@@ -8,7 +8,10 @@ This project adheres to [Semantic Versioning](https://semver.org).
 Note: In this file, do not use the hard wrap in the middle of a sentence for compatibility with GitHub comment style markdown rendering.
 -->
 
-## [Unreleased]
+## [2.0.0] - 2024-12-07
+
+- Striped down to a minimal version for old linux with git and bash preinstalled
+- Add ssh_private_key to be able to fetch repos through ssh
 
 ## [1.3.1] - 2024-09-28
 
