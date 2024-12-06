@@ -62,6 +62,7 @@ runs:
       if: runner.os	!= 'Windows'
     - run: bash --noprofile --norc "${GITHUB_ACTION_PATH:?}/main.sh"
       env:
+        GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
         INPUT_TOKEN: '${{ inputs.token }}'
         INPUT_PERSIST_CREDENTIALS: '${{ inputs.persist-credentials }}'
       shell: bash
