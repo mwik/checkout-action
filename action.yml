@@ -54,7 +54,7 @@ runs:
 
     - run: |
         HOMEDIR=$(getent passwd $(id -u) | cut -d: -f6)
-        mkdir -p $(HOMEDIR)/.ssh
+        mkdir -p $HOMEDIR/.ssh
         echo "${{ inputs.ssh_private_key }}" > $HOMEDIR/.ssh/id_rsa
         chmod 0600 $HOMEDIR/.ssh/id_rsa
         eval $(ssh-agent -s)
