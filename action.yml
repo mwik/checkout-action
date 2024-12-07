@@ -40,10 +40,10 @@ runs:
         if [[ "${GITHUB_REF}" == "refs/heads/"* ]]; then
           branch="${GITHUB_REF#refs/heads/}"
           remote_ref="refs/remotes/origin/${branch}"
-          git fetch --no-recurse-submodules --depth=1 origin "+${GITHUB_SHA}:${remote_ref}"
+          git fetch --no-tags --no-recurse-submodules --depth=1 origin "+${GITHUB_SHA}:${remote_ref}"
           git checkout --force -B "${branch}" "${remote_ref}"
         else
-          git fetch --no-recurse-submodules --depth=1 origin "+${GITHUB_SHA}:${GITHUB_REF}"
+          git fetch --no-tags --no-recurse-submodules --depth=1 origin "+${GITHUB_SHA}:${GITHUB_REF}"
           git checkout --force "${GITHUB_REF}"
         fi
 
